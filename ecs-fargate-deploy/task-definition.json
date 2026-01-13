@@ -4,11 +4,11 @@
   "requiresCompatibilities": ["FARGATE"],
   "cpu": "512",
   "memory": "1024",
-  "executionRoleArn": "arn:aws:iam::121263836368:role/ecsTaskExecutionRole",
+  "executionRoleArn": "arn:<arn>:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "name": "airline-chatbot",
-      "image": "121263836368.dkr.ecr.ap-south-1.amazonaws.com/airline_chatbot:latest",
+      "image": "<ECR_URI>",
       "essential": true,
       "portMappings": [
         {
@@ -19,7 +19,7 @@
       "environment": [
         {
           "name": "API_URL",
-          "value": "https://esqizm4qw8.execute-api.ap-south-1.amazonaws.com/chat"
+          "value": "<API GATEWAY Endpoint>"
         }
       ],
       "logConfiguration": {
