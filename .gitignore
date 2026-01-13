@@ -20,7 +20,7 @@ parts/
 sdist/
 var/
 wheels/
-ecs-fargate-deploy/
+*.ecs-fargate-deploy/
 share/python-wheels/
 *.egg-info/
 .installed.cfg
