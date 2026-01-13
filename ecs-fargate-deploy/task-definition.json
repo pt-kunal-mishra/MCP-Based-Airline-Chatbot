@@ -1,0 +1,35 @@
+{
+  "family": "airline-chatbot-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "executionRoleArn": "arn:aws:iam::121263836368:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "airline-chatbot",
+      "image": "121263836368.dkr.ecr.ap-south-1.amazonaws.com/airline_chatbot:latest",
+      "essential": true,
+      "portMappings": [
+        {
+          "containerPort": 7860,
+          "protocol": "tcp"
+        }
+      ],
+      "environment": [
+        {
+          "name": "API_URL",
+          "value": "https://esqizm4qw8.execute-api.ap-south-1.amazonaws.com/chat"
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/airline-chatbot",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ]
+}
