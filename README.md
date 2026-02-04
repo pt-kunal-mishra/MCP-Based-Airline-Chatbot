@@ -6,25 +6,30 @@ An Agentic AI-powered Airline Chatbot that answers real airline flight queries u
 https://huggingface.co/spaces/Pt-kunal-mishra/Database-Airline_chatbot
 
 ## 🧠 High-Level Architecture
+
+**Architecture Diagram**
+
+![Architecture Diagram](./Screenshot%202026-02-04%20135818.png)
+
 ```
 User (Web / Mobile / Streamlit)
-        |
-        v
+  |
+  v
 API Gateway (REST API)
-        |
-        v
+  |
+  v
 AWS Lambda (Agent Invocation)
-        |
-        v
+  |
+  v
 Amazon Bedrock Agent (Agentic AI)
-        |
-        v
+  |
+  v
 Action Group (Lambda)
-        |
-        v
+  |
+  v
 MCP Server (FastAPI)
-        |
-        v
+  |
+  v
 MariaDB (MySQL View)
 ```
 
